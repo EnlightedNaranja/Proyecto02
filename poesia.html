@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<title>Our Funky HTML Page</title>
+<meta name="description" content="vogon poesy">
+<meta name="keywords" content="vogon poesy">
+</head>
+<body>
+<h1>
+Vogon Poetry Generator
+</h1>
+<h2>
+A basic generator to replicate the functionality of now archived bbc generator
+</h2>
+<form  method="post" name="myForm">
+  <label for="mother">A word that describes your mother:</label>
+  <input type="text" id="mother" name="mother" required><br><br>
+  <label for="colour">An unsuitable colour for a t-shirt:</label>
+  <input type="text" id="colour" name="colour" required><br><br>
+  <label for="smell">Something that smells:</label>
+  <input type="text" id="smell" name="smell" required><br><br>
+  <label for="friend">A friend's name:</label>
+  <input type="text" id="friend" name="friend" required><br><br>
+  <label for="morning">A word that describes how you feel when you first wake up in the morning:</label>
+  <input type="text" id="morning" name="morning" required><br><br>
+  <label for="green">Something small and green:</label>
+  <input type="text" id="green" name="green" required><br><br>
+  <label for="madeup">A completely made up word:</label>
+  <input type="text" id="madeup" name="madeup" required><br><br>
+  <label for="rude">A word that sounds rude, but isn't:</label>
+  <input type="text" id="rude" name="rude" required><br><br>
+  <label for="fridge">Something you'd find in your fridge:</label>
+  <input type="text" id="fridge" name="fridge" required><br><br>
+  <label for="animal">An ugly animal:</label>
+  <input type="text" id="animal" name="animal"><br><br>
+  <input type="button" onclick="formSubmit()" value="Send">
+</form>
+</body>
+</html>
+<script>
+  function formSubmit(){
+    let mother = document.forms["myForm"]["mother"].value;
+    let colour = document.forms["myForm"]["colour"].value;
+    let smell = document.forms["myForm"]["smell"].value;
+    let friend = document.forms["myForm"]["friend"].value;
+    let morning = document.forms["myForm"]["morning"].value;
+    let green = document.forms["myForm"]["green"].value;
+    let madeup = document.forms["myForm"]["madeup"].value;
+    let rude = document.forms["myForm"]["rude"].value;
+    let fridge = document.forms["myForm"]["fridge"].value;
+    let animal = document.forms["myForm"]["animal"].value;
+    if (x == "") {
+      alert("Name must be filled out");
+      return false;
+    }
+  }
+</script>
