@@ -4,6 +4,8 @@
 <title>Our Funky HTML Page</title>
 <meta name="description" content="vogon poesy">
 <meta name="keywords" content="vogon poesy">
+<link rel="stylesheet" href="poesia.css">
+<link href="https://fonts.googleapis.com/css?family=Karla:400,700|Space+Mono:400,400i,700,700i" rel="stylesheet">
 </head>
 <body>
 <h1>
@@ -12,29 +14,36 @@ Vogon Poetry Generator
 <h2>
 A basic generator to replicate the functionality of now archived bbc generator
 </h2>
+<section id="wrapper">
+<div id="one">
+<center>
 <form  method="post" name="myForm">
-  <label for="mother">A word that describes your mother:</label>
-  <input type="text" id="mother" name="mother" required><br><br>
-  <label for="colour">An unsuitable colour for a t-shirt:</label>
-  <input type="text" id="colour" name="colour" required><br><br>
-  <label for="smell">Something that smells:</label>
-  <input type="text" id="smell" name="smell" required><br><br>
-  <label for="friend">A friend's name:</label>
-  <input type="text" id="friend" name="friend" required><br><br>
-  <label for="morning">A word that describes how you feel when you first wake up in the morning:</label>
-  <input type="text" id="morning" name="morning" required><br><br>
-  <label for="green">Something small and green:</label>
-  <input type="text" id="green" name="green" required><br><br>
-  <label for="madeup">A completely made up word:</label>
-  <input type="text" id="madeup" name="madeup" required><br><br>
-  <label for="rude">A word that sounds rude, but isn't:</label>
-  <input type="text" id="rude" name="rude" required><br><br>
-  <label for="fridge">Something you'd find in your fridge:</label>
-  <input type="text" id="fridge" name="fridge" required><br><br>
-  <label for="animal">An ugly animal:</label>
+  <label for="mother">Una palabra que describa a tu madre:</label>
+  <input type="text" id="mother" name="mother"><br><br>
+  <label for="colour">Un color inadecuado para una camiseta:</label>
+  <input type="text" id="colour" name="colour"><br><br>
+  <label for="smell">Algo que huele:</label>
+  <input type="text" id="smell" name="smell"><br><br>
+  <label for="friend">El nombre de un amigo:</label>
+  <input type="text" id="friend" name="friend"><br><br>
+  <label for="morning">Una palabra que describe cómo te sientes cuando te levantas por la mañana:</label>
+  <input type="text" id="morning" name="morning"><br><br>
+  <label for="green">Algo pequeño y verde:</label>
+  <input type="text" id="green" name="green"><br><br>
+  <label for="madeup">Una palabra completamente inventada:</label>
+  <input type="text" id="madeup" name="madeup"><br><br>
+  <label for="rude">Una palabra que suena grosera, pero no lo es:</label>
+  <input type="text" id="rude" name="rude"><br><br>
+  <label for="fridge">Algo que encontrarías en tu nevera:</label>
+  <input type="text" id="fridge" name="fridge"><br><br>
+  <label for="animal">Un animal feo:</label>
   <input type="text" id="animal" name="animal"><br><br>
-  <input type="button" onclick="formSubmit()" value="Send">
+  <p class="submit"><input type="button" value="Enviar"  onclick="formSubmit()"/></p>
 </form>
+<label id="texto"></label>
+</center>
+</div>
+</section>
 </body>
 </html>
 <script>
@@ -49,9 +58,50 @@ A basic generator to replicate the functionality of now archived bbc generator
     let rude = document.forms["myForm"]["rude"].value;
     let fridge = document.forms["myForm"]["fridge"].value;
     let animal = document.forms["myForm"]["animal"].value;
-    if (x == "") {
-      alert("Name must be filled out");
+ 
+
+    if (mother == "") {
+      alert("Dinos el nombre de tu madre, no seas tímido bro");
       return false;
     }
+    if (colour == "") {
+      alert("El color no importa, todos somos iguales");
+      return false;
+    }
+    if (smell == "") {
+      alert("Tranquilo, no hablamos de tu olor. Ponlo");
+      return false;
+    }
+    if (friend == "") {
+      alert("Si no se te ocurre, pon el de tu izquierda, si no el de tu derecha, si no busca en google");
+      return false;
+    }
+    if (morning == "") {
+      alert("Marvin es el único que no duerme");
+      return false;
+    }
+    if (green == "") {
+      alert("pequeño  y verde... Achu!!!");
+      return false;
+    }
+    if (madeup == "") {
+      alert("Murcia no existe, prueba eso");
+      return false;
+    }
+    if (rude == "") {
+      alert("Io k ze, pienza");
+      return false;
+    }
+    if (fridge == "") {
+      alert("La abuela no aprueba que dejes esto en blanco");
+      return false;
+    }
+    if (animal == "") {
+      alert("Conoces el pez borron?");
+      return false;
+    }
+    let poetry = "¡Leelo bajo tu propio riesgo! " + "</br>" + "mirale, mirale tan " + mother.fontcolor('#FDED62') + " como tu madre" + "</br>" + "Que su tono " + colour.fontcolor('#FDED62') + " no te descuadre" + "</br>" + "Puesto que un secreto va a revelarte " + "</br>" + friend.fontcolor('#FDED62') + " huele a " + smell.fontcolor('#FDED62') + " tan fuerte" + "</br>" + "que puede hasta matarte" + "</br>" + "esta verificado por Marvin que desde el confin de la galaxia" + "</br>" + "lo percibió y le hizo sentir " + morning.fontcolor('#FDED62') + "</br>" + green.fontcolor('#FDED62') + " era más pequeño que Shrek " + "</br>" + "y aunque no lo parezca está más rico que un bistek" + "</br>" + madeup.fontcolor('#FDED62') + "  esto no tiene sentido " + "</br>" + "puesto que no es nada conocido" + "</br>" + rude.fontcolor('#FDED62') + " tu más por si acaso " + "</br>" + "que no me arriesgo en este caso " + "</br>" + fridge.fontcolor('#FDED62') + " guardalo en el toupper de tu abuela " + "</br>" + "que sino " + animal.fontcolor('#FDED62') + " se lo lleva ";
+    var parrafo = document.getElementById('texto');
+	  parrafo.innerHTML = poetry;
   }
 </script>
